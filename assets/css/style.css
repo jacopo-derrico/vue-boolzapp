@@ -9,8 +9,13 @@ main {
     height: calc(100vh - 6rem);
 }
 
-#window>div {
-    height: 100%;
+#first-block-left {
+    height: 176px;
+}
+
+#chats-list {
+    height: calc(100vh - 6rem - 176px);
+    overflow: hidden;
 }
 
 .avatars {
@@ -43,6 +48,16 @@ i {
     font-size: 12px;
 }
 
-/* #chats-list {
-    overflow: hidden;
-} */
+#header-right {
+    height: 66px;
+}
+
+#message-input {
+    height: 66px;
+    background-color: #EAEAEA;
+}
+
+#current-chat {
+    background-image: url(/assets/img/mine.jpg);
+    background-size: 50%;
+}
