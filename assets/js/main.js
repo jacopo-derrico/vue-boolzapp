@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            currentChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -17,7 +18,9 @@ createApp({
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di stendere i panni',
-                            status: 'sent',
+                            status: 'sent'
+                        },
+                        {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received'
