@@ -26,10 +26,10 @@
     <div id="app">
         <main class="container-fluid ">
             <div class="row justify-content-center ">
-                <div id="window" class="col-10 h-100 my-5 ">
+                <div id="window" class="col-10 my-5 ">
                     <div class="row row-cols-2 gap-0">
-                        <!-- left column -->
-                        <div class="col-4 px-0 ">
+                        <!------------------------------------ left column -->
+                        <div class="col-4 px-0 bg-white overflow-hidden d-flex flex-column ">
                             <!-- col header -->
                             <div class="d-flex justify-content-between align-content-center p-2  section-headers">
                                 <div class="d-flex gap-2 align-items-center ">
@@ -55,14 +55,135 @@
                                 </div>
                                 <div id="notification-text" class="mx-2">
                                     <p class="mb-0 ">Ricevi notifiche di nuovi messaggi</p>
-                                    <span class="text-decoration-underline text-secondary mb-0 ">Attiva notifiche desktop</span>
+                                    <span class="text-decoration-underline text-secondary mb-0 small-text">Attiva notifiche
+                                        desktop</span>
+                                </div>
+                            </div>
+                            <!-- col searchbar -->
+                            <div class="p-1 bg-body-secondary bg-opacity-50  ">
+                                <div role="search" class="d-flex bg-white w-100 rounded">
+                                    <div id="search-bar" class="input-group">
+                                        <span class="input-group-text bg-white px-3 ">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                        <input type="search" class="form-control bg-white" id="searchbar-value"
+                                            placeholder="Cerca o inizia una nuova chat">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col chats list -->
+                            <div id="chats-list" class="bg-white overflow-y-scroll">
+                                <!-- account line -->
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex p-2 ">
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">Michele</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- right column -->
-                        <div class="col-8 px-0 border-start ">
+                        <!----------------------------------- right column -->
+                        <div class="col-8 px-0 border-start d-flex flex-column">
                             <!-- col header -->
-                            <div class="d-flex justify-content-between align-content-center p-2  section-headers">
+                            <div class="d-flex justify-content-between align-content-center p-2 section-headers">
                                 <div class="d-flex gap-2 align-items-center ">
                                     <figure class="avatars mb-0">
                                         <img class="img-fluid rounded-circle" src="./assets/img/avatar_1.jpg"
@@ -70,7 +191,7 @@
                                     </figure>
                                     <div>
                                         <p class="mb-0 ">Michele</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 ">Ultimo accesso oggi alle 12:00
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo accesso oggi alle 12:00
                                         </p>
                                     </div>
                                 </div>
@@ -79,6 +200,10 @@
                                     <i class="fa-solid fa-paperclip"></i>
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </div>
+                            </div>
+                            <!-- col chat -->
+                            <div>
+                                
                             </div>
                         </div>
                     </div>

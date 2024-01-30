@@ -5,6 +5,14 @@ main {
     font-family: "Lato", sans-serif;
 }
 
+#window {
+    height: calc(100vh - 6rem);
+}
+
+#window>div {
+    height: 100%;
+}
+
 .avatars {
     width: 50px;
 }
@@ -31,6 +39,10 @@ i {
     color: #8EDAFC;
 }
 
-#notification-text > span {
+.small-text {
     font-size: 12px;
 }
+
+/* #chats-list {
+    overflow: hidden;
+} */
