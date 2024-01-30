@@ -60,4 +60,20 @@ i {
 #current-chat {
     background-image: url(/assets/img/mine.jpg);
     background-size: 50%;
+    height: calc(100% - 132px);
+}
+
+.my-message {
+    background-color: #D5F9BA;
+}
+
+.message-time {
+    bottom: 0;
+    right: 10px;
+}
+
+.message-bubble {
+    min-width: 30%;
+    min-height: 50px;
+    border-radius: 15px;
 }
