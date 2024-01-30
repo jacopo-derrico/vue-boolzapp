@@ -18,6 +18,14 @@ main {
     overflow: hidden;
 }
 
+.chat-list-item:hover {
+    background-color: #f2fee7;
+}
+
+.chat-list-item_selected {
+    background-color: #f2fee7;
+}
+
 .avatars {
     width: 50px;
 }
