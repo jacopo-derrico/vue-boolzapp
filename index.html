@@ -89,11 +89,11 @@
                                     </figure>
                                     <div class="flex-grow-1 ">
                                         <p class="mb-0 ">{{chats.name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo messaggio inviato
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].message}}
                                         </p>
                                     </div>
                                     <div>
-                                        <span class="text-secondary text-opacity-50 small-text">12:00</span>
+                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].date}}</span>
                                     </div>
                                 </div>
                             </div>
