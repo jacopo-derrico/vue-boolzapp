@@ -65,16 +65,44 @@
                                     <div role="search" class="d-flex bg-white w-100 rounded">
                                         <div id="search-bar" class="input-group">
                                             <span class="input-group-text bg-white px-3 ">
-                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                                <i class="fa-solid fa-magnifying-glass"
+                                               ></i>
                                             </span>
-                                            <input type="search" class="form-control bg-white" id="searchbar-value"
-                                                placeholder="Cerca o inizia una nuova chat">
+                                            <input type="text" class="form-control bg-white" id="searchbar-value"
+                                                placeholder="Cerca o inizia una nuova chat"
+                                                v-model="searchBarValue"
+                                                @input="searchChat(searchBarValue)">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- col chats list -->
-                            <div id="chats-list" class="bg-white overflow-y-scroll">
+                            <!-- IF search array not empty -->
+                            <div v-if="searchBarValue !== '' "  id="chats-list" class="bg-white overflow-y-scroll">
+                                <!-- account line -->
+                                <div class="d-flex p-2 chat-list-item"
+                                v-for="(chats, index) in searchArray"
+                                @click="currentChat = index"
+                                :class="(currentChat == index) ? 'chat-list-item_selected' : '' "
+                                >
+                                    <figure class="avatars mb-0 me-2 ">
+                                        <img class="img-fluid rounded-circle" 
+                                        :src="chats.avatar"
+                                        
+                                            alt="account profile picture">
+                                    </figure>
+                                    <div class="flex-grow-1 ">
+                                        <p class="mb-0 ">{{chats.name}}</p>
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].message}}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].date}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ELSE search array is empty -->
+                            <div v-else id="chats-list" class="bg-white overflow-y-scroll">
                                 <!-- account line -->
                                 <div class="d-flex p-2 chat-list-item"
                                 v-for="(chats, index) in contacts"

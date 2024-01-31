@@ -5,6 +5,8 @@ createApp({
         return {
             currentChat: 0,
             newMessage: '',
+            searchBarValue: '',
+            searchArray: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -186,6 +188,14 @@ createApp({
                     status: 'received'
                 })
             }, 1000)
+        },
+        searchChat(query) {
+            const newSearch = this.contacts.filter((el) => el.name.toLowerCase().includes(query.toLowerCase()))
+            this.searchArray = newSearch;
+
+            if (this.searchBarValue == '') {
+                this.searchArray = []
+            }
         },
     },
 }).mount('#app')
