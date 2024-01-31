@@ -136,7 +136,9 @@
                             <!-- col messagge -->
                             <div id="message-input" class="d-flex align-items-center ">
                                 <i class="fa-regular fa-face-smile px-3 text-secondary "></i>
-                                <input type="text" class="form-control" id="newMessage" placeholder="Scrivi un messaggio">
+                                <input 
+                                v-model="newMessage" @keyup.enter="sendMessage(currentChat)"
+                                type="text" class="form-control" id="newMessage" placeholder="Scrivi un messaggio">
                                 <i class="fa-solid fa-microphone px-3 text-secondary "></i>
                             </div>
                         </div>
