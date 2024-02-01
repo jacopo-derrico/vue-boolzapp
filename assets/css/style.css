@@ -36,6 +36,7 @@ main {
 
 i {
     color: #B1B1B1;
+    cursor: pointer;
 }
 
 #notification-badges {
@@ -84,4 +85,40 @@ i {
     min-width: 30%;
     min-height: 50px;
     border-radius: 15px;
+}
+
+.message-bubble:hover .dropdown-btn {
+    display: block;
+}
+
+.dropdown-btn {
+    display: none;
+    top: 10px;
+    right: 10px;
+}
+
+.message-dropdown {
+    width: 130px;
+    transform: translateY(80%);
+    top: -5px;
+    right: 0;
+}
+
+.dropdown-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-selection:hover {
+    background-color: #EAEAEA;
+}
+
+.selection-delete, .fa-trash-alt {
+    color: red;
+}
+
+.selection-delete:hover {
+    background-color: #fbd0d0;
 }

@@ -6,7 +6,7 @@ createApp({
             currentChat: 0,
             newMessage: '',
             searchBarValue: '',
-            searchArray: [],
+            active: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,7 +174,7 @@ createApp({
         sendMessage(index) {
             if (this.newMessage !== '') {
                 this.contacts[index].messages.push({
-                    date: 'current date',
+                    date: this.generateDate(),
                     message: this.newMessage,
                     status: 'sent'
                 })
@@ -183,7 +183,7 @@ createApp({
             
             setTimeout(() => {
                 this.contacts[index].messages.push({
-                    date: 'current date',
+                    date: this.generateDate(),
                     message: 'ok',
                     status: 'received'
                 })
@@ -198,5 +198,22 @@ createApp({
                 }
             });
         },
+        generateDate() {
+            var DateTime = luxon.DateTime;
+            const now = DateTime.local();
+            const formatDate = now.toFormat("HH:mm")
+            return formatDate
+        },
+        dropdownMessage(index) {
+            if (this.active === index) {
+                this.active = null
+            } else {
+                this.active = index
+            }
+            
+        },
+        deleteMessage() {
+            
+        }
     },
 }).mount('#app')

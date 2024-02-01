@@ -137,6 +137,21 @@
                                     :class="(bubble.status == 'sent') ? 'my-message' : 'bg-white' ">
                                         <span class="align-self-start pt-1 ps-2 ">{{bubble.message}}</span>
                                         <span class="small-text message-time position-absolute text-secondary text-opacity-50 ">{{bubble.date}}</span>
+                                        <i
+                                        @click="dropdownMessage(bubble)"
+                                        class="dropdown-btn fas fa-chevron-down position-absolute "></i>
+                                        <div
+                                        v-if="active === bubble"
+                                        class="message-dropdown position-absolute bg-white z-3 rounded overflow-hidden ">
+                                            <div class="dropdown-selection py-2 px-3 mb-0 ">
+                                                <p class="mb-0 ">Info</p>
+                                                <i class="fas fa-info mb-0 "></i>
+                                            </div>
+                                            <div class="dropdown-selection selection-delete py-2 px-3 mb-0 ">
+                                                <p class="mb-0 ">Delete</p>
+                                                <i class="far fa-trash-alt mb-0 "></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -161,6 +176,8 @@
         crossorigin="anonymous"></script>
     <!-- Vue.js -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <!-- Luxon date manager -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script> 
     <!-- Main app -->
     <script src="./assets/js/main.js"></script>
 </body>
