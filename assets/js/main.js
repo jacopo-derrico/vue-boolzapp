@@ -189,13 +189,14 @@ createApp({
                 })
             }, 1000)
         },
-        searchChat(query) {
-            const newSearch = this.contacts.filter((el) => el.name.toLowerCase().includes(query.toLowerCase()))
-            this.searchArray = newSearch;
-
-            if (this.searchBarValue == '') {
-                this.searchArray = []
-            }
+        searchChat() {
+            this.contacts.forEach((element) => {
+                if (element.name.toLowerCase().includes(this.searchBarValue.toLowerCase())) {
+                    element.visible = true
+                } else {
+                    element.visible = false
+                }
+            });
         },
     },
 }).mount('#app')
