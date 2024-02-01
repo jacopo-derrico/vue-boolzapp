@@ -6,7 +6,7 @@ createApp({
             currentChat: 0,
             newMessage: '',
             searchBarValue: '',
-            active: null,
+            active: -1,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,6 +166,18 @@ createApp({
                             status: 'received'
                         }
                     ]
+                },
+                {
+                    name: 'Jacopo',
+                    avatar: './assets/img/avatar_8.jpg',
+                    visible: true,
+                    messages: [
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'OK!!',
+                            status: 'received'
+                        }
+                    ]
                 }
             ]
         }
@@ -206,14 +218,25 @@ createApp({
         },
         dropdownMessage(index) {
             if (this.active === index) {
-                this.active = null
+                this.active = -1
             } else {
                 this.active = index
             }
             
         },
-        deleteMessage() {
-            
+        deleteMessage(index, arr) {
+            if (index < this.contacts[arr].messages.length) {
+                this.contacts[arr].messages.splice(index, 1);
+            }
+
+            if (this.contacts[arr].messages.length === 0) {
+                // Handle the empty array case
+                // For example, you could assign a new empty array to the messages property
+                this.contacts[arr].messages = [];
+            }
+
+            // this.contacts[arr].messages.splice(index, 1)
+            // this.active = -1
         }
     },
 }).mount('#app')

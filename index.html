@@ -95,11 +95,11 @@
                                     </figure>
                                     <div class="flex-grow-1 ">
                                         <p class="mb-0 ">{{chats.name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].message}}
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{chats.messages.length > 0 ? chats.messages[chats.messages.length - 1].message : ''}}
                                         </p>
                                     </div>
                                     <div>
-                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages[chats.messages.length - 1].date}}</span>
+                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages.length > 0 ? chats.messages[chats.messages.length - 1].date : ''}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                             <div id="current-chat" class="overflow-scroll ">
                                 <!-- messaggio inviato -->
                                 <div class="d-flex px-3 py-2"
-                                v-for="bubble in contacts[currentChat].messages"
+                                v-for="(bubble, index) in contacts[currentChat].messages"
                                 :class="(bubble.status == 'sent') ? 'justify-content-end' : 'justify-content-start' " >
                                     <div class="d-flex position-relative message-bubble p-1 "
                                     :class="(bubble.status == 'sent') ? 'my-message' : 'bg-white' ">
@@ -147,7 +147,9 @@
                                                 <p class="mb-0 ">Info</p>
                                                 <i class="fas fa-info mb-0 "></i>
                                             </div>
-                                            <div class="dropdown-selection selection-delete py-2 px-3 mb-0 ">
+                                            <div
+                                            @click="deleteMessage(index, currentChat)"
+                                            class="dropdown-selection selection-delete py-2 px-3 mb-0 ">
                                                 <p class="mb-0 ">Delete</p>
                                                 <i class="far fa-trash-alt mb-0 "></i>
                                             </div>
