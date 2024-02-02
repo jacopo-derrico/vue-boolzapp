@@ -56,7 +56,8 @@
                                     </div>
                                     <div id="notification-text" class="mx-2">
                                         <p class="mb-0 ">Ricevi notifiche di nuovi messaggi</p>
-                                        <span class="text-decoration-underline text-secondary mb-0 small-text">Attiva notifiche
+                                        <span class="text-decoration-underline text-secondary mb-0 small-text">Attiva
+                                            notifiche
                                             desktop</span>
                                     </div>
                                 </div>
@@ -65,12 +66,10 @@
                                     <div role="search" class="d-flex bg-white w-100 rounded">
                                         <div id="search-bar" class="input-group">
                                             <span class="input-group-text bg-white px-3 ">
-                                                <i class="fa-solid fa-magnifying-glass"
-                                               ></i>
+                                                <i class="fa-solid fa-magnifying-glass"></i>
                                             </span>
                                             <input type="text" class="form-control bg-white" id="searchbar-value"
-                                                placeholder="Cerca o inizia una nuova chat"
-                                                v-model="searchBarValue"
+                                                placeholder="Cerca o inizia una nuova chat" v-model="searchBarValue"
                                                 @input="searchChat">
                                         </div>
                                     </div>
@@ -80,44 +79,42 @@
                             <!-- IF search array not empty -->
                             <div id="chats-list" class="bg-white overflow-y-scroll">
                                 <!-- account line -->
-                                <div class="p-2 chat-list-item"
-                                v-for="(chats, index) in contacts"
-                                v-show="chats.visible"
-                                @click="currentChat = index"
-                                :class="[((currentChat == index) ? 'chat-list-item_selected' : ''),  
-                                (chats.visible ? 'd-flex' : '') ]"
-                                >
+                                <div class="p-2 chat-list-item" v-for="(chats, index) in contacts"
+                                    v-show="chats.visible" @click="currentChat = index" :class="[((currentChat == index) ? 'chat-list-item_selected' : ''),  
+                                (chats.visible ? 'd-flex' : '') ]">
                                     <figure class="avatars mb-0 me-2 ">
-                                        <img class="img-fluid rounded-circle" 
-                                        :src="chats.avatar"
-                                        
+                                        <img class="img-fluid rounded-circle" :src="chats.avatar"
                                             alt="account profile picture">
                                     </figure>
                                     <div class="flex-grow-1 ">
                                         <p class="mb-0 ">{{chats.name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">{{chats.messages.length > 0 ? chats.messages[chats.messages.length - 1].message : ''}}
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">
+                                            {{chats.messages.length > 0 ? chats.messages[chats.messages.length -
+                                            1].message : ''}}
                                         </p>
                                     </div>
                                     <div>
-                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages.length > 0 ? chats.messages[chats.messages.length - 1].date : ''}}</span>
+                                        <span class="text-secondary text-opacity-50 small-text">{{chats.messages.length
+                                            > 0 ? chats.messages[chats.messages.length - 1].date : ''}}</span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <!----------------------------------- right column -->
                         <div class="col-8 px-0 border-start d-flex flex-column">
                             <!-- col header -->
-                            <div id="header-right" class="d-flex justify-content-between align-content-center p-2 section-headers">
+                            <div id="header-right"
+                                class="d-flex justify-content-between align-content-center p-2 section-headers">
                                 <div class="d-flex gap-2 align-items-center ">
                                     <figure class="avatars mb-0">
-                                        <img class="img-fluid rounded-circle" 
-                                        :src="contacts[currentChat].avatar"
+                                        <img class="img-fluid rounded-circle" :src="contacts[currentChat].avatar"
                                             alt="account profile picture">
                                     </figure>
                                     <div>
                                         <p class="mb-0 ">{{contacts[currentChat].name}}</p>
-                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo accesso oggi alle 12:00
+                                        <p class="mb-0 text-secondary text-opacity-50 small-text">Ultimo accesso oggi
+                                            alle 12:00
                                         </p>
                                     </div>
                                 </div>
@@ -130,26 +127,23 @@
                             <!-- col chat -->
                             <div id="current-chat" class="overflow-scroll ">
                                 <!-- messaggio inviato -->
-                                <div class="d-flex px-3 py-2"
-                                v-for="(bubble, index) in contacts[currentChat].messages"
-                                :class="(bubble.status == 'sent') ? 'justify-content-end' : 'justify-content-start' " >
+                                <div class="d-flex px-3 py-2" v-for="(bubble, index) in contacts[currentChat].messages"
+                                    :class="(bubble.status == 'sent') ? 'justify-content-end' : 'justify-content-start' ">
                                     <div class="d-flex position-relative message-bubble p-1 "
-                                    :class="(bubble.status == 'sent') ? 'my-message' : 'bg-white' ">
+                                        :class="(bubble.status == 'sent') ? 'my-message' : 'bg-white' ">
                                         <span class="align-self-start pt-1 ps-2 ">{{bubble.message}}</span>
-                                        <span class="small-text message-time position-absolute text-secondary text-opacity-50 ">{{bubble.date}}</span>
-                                        <i
-                                        @click="dropdownMessage(bubble)"
-                                        class="dropdown-btn fas fa-chevron-down position-absolute "></i>
-                                        <div
-                                        v-if="active === bubble"
-                                        class="message-dropdown position-absolute bg-white z-3 rounded overflow-hidden ">
+                                        <span
+                                            class="small-text message-time position-absolute text-secondary text-opacity-50 ">{{bubble.date}}</span>
+                                        <i @click="dropdownMessage(bubble)"
+                                            class="dropdown-btn fas fa-chevron-down position-absolute "></i>
+                                        <div v-if="active === bubble"
+                                            class="message-dropdown position-absolute bg-white z-3 rounded overflow-hidden ">
                                             <div class="dropdown-selection py-2 px-3 mb-0 ">
                                                 <p class="mb-0 ">Info</p>
                                                 <i class="fas fa-info mb-0 "></i>
                                             </div>
-                                            <div
-                                            @click="deleteMessage(index, currentChat)"
-                                            class="dropdown-selection selection-delete py-2 px-3 mb-0 ">
+                                            <div @click="deleteMessage(index, currentChat)"
+                                                class="dropdown-selection selection-delete py-2 px-3 mb-0 ">
                                                 <p class="mb-0 ">Delete</p>
                                                 <i class="far fa-trash-alt mb-0 "></i>
                                             </div>
@@ -158,11 +152,21 @@
                                 </div>
                             </div>
                             <!-- col messagge -->
-                            <div id="message-input" class="d-flex align-items-center ">
-                                <i class="fa-regular fa-face-smile px-3 text-secondary "></i>
-                                <input 
-                                v-model="newMessage" @keyup.enter="sendMessage(currentChat)"
-                                type="text" class="form-control" id="newMessage" placeholder="Scrivi un messaggio">
+                            <div id="message-input" class="d-flex align-items-center position-relative ">
+                                <i class="fa-regular fa-face-smile px-3 text-secondary "
+                                @mouseover="emojiBubble = true"
+                                ></i>
+                                <div v-if="emojiBubble"
+                                @mouseleave="emojiBubble = false"
+                                id="emojiBubble"
+                                    class="position-absolute rounded bg-white">
+                                    <div v-for="(emoji, index) in emojis" class="emoji-item"
+                                    @click="addEmoji(index)">
+                                        {{emoji}}
+                                    </div>
+                                </div>
+                                <input v-model="newMessage" @keyup.enter="sendMessage(currentChat)" type="text"
+                                    class="form-control" id="newMessage" placeholder="Scrivi un messaggio">
                                 <i class="fa-solid fa-microphone px-3 text-secondary "></i>
                             </div>
                         </div>
@@ -179,7 +183,7 @@
     <!-- Vue.js -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <!-- Luxon date manager -->
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- Main app -->
     <script src="./assets/js/main.js"></script>
 </body>

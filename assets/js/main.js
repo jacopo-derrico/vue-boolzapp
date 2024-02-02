@@ -7,6 +7,12 @@ createApp({
             newMessage: '',
             searchBarValue: '',
             active: -1,
+            emojiBubble: false,
+            emojis: [
+                "😊", "😂", "😍", "👍", "👌", "🙌", "🎉", "🌟", "🔥", "💯",
+                "😎", "🤔", "😜", "😇", "🤗", "🚀", "💻", "📚", "🎨", "🎈",
+                "❤️", "🧡", "💛", "💚", "💙", "💜", "🌈", "⭐", "🌼", "🍀"
+              ],
             contacts: [
                 {
                     name: 'Michele',
@@ -230,13 +236,11 @@ createApp({
             }
 
             if (this.contacts[arr].messages.length === 0) {
-                // Handle the empty array case
-                // For example, you could assign a new empty array to the messages property
                 this.contacts[arr].messages = [];
             }
-
-            // this.contacts[arr].messages.splice(index, 1)
-            // this.active = -1
+        },
+        addEmoji(index) {
+            this.newMessage += this.emojis[index];
         }
     },
 }).mount('#app')
