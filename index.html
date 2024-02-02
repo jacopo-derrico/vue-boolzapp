@@ -137,6 +137,7 @@
                                         <i @click="dropdownMessage(bubble)"
                                             class="dropdown-btn fas fa-chevron-down position-absolute "></i>
                                         <div v-if="active === bubble"
+                                        @mouseleave="active = -1"
                                             class="message-dropdown position-absolute bg-white z-3 rounded overflow-hidden ">
                                             <div class="dropdown-selection py-2 px-3 mb-0 ">
                                                 <p class="mb-0 ">Info</p>
